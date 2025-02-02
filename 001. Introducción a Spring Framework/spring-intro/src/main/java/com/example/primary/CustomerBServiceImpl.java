@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 
-//@Primary
-//@Service
+@Primary
+@Service
 public class CustomerBServiceImpl implements CustomerService{
     @Override
     public String hello() {

@@ -120,8 +120,9 @@ public class ProductController {
     GET http://localhost:8080/products/delete/all
      */
     @GetMapping("/delete/all")
-    public String deleteAllQuest(){
+    public String deleteAllQuest(Model model){
         // Aquí se podrían validar los permisos de borrado del usuario, por ejemplo.
+        model.addAttribute("total", this.repository.count());
         return "product-delete-all";
     }
 

@@ -16,15 +16,19 @@ public class App {
         var repository = context.getBean(ProductRepository.class);
 
         List<Product> products = List.of(
-                new Product(null, "product1", 5.99, 1),
-                new Product(null, "product2", 6.99, 2),
-                new Product(null, "product3", 7.99, 4),
-                new Product(null, "product4", 8.99, 2),
-                new Product(null, "product5", 8.99, 2),
-                new Product(null, "product6", 8.99, 2),
+                new Product(null, "Pantalón", 5.99, 1),
+                new Product(null, "Sudadera", 6.99, 2),
+                new Product(null, "Zapatos", 7.99, 4),
+                new Product(null, "Mancuerna", 8.99, 2),
+                new Product(null, "Rodillera", 8.99, 2),
+                new Product(null, "Balón", 8.99, 2),
                 new Product(null, "Zapatillas", 69.99, 20)
         );
         repository.saveAll(products);
+
+        List<Product> products2 = repository.findAllByPrice(8.99);
+        products2.forEach(System.out::println);
+
     }
 
 }

@@ -3,27 +3,40 @@ package com.example.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private String name;
+    private double price;
+    private int quantity;
 
-    private Double price;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
-    private Integer quantity;
 
     public Product() {
     }
 
-    public Product(Long id, String title, Double price, Integer quantity) {
-        this.id = id;
-        this.title = title;
+    public Product(String name, double price, int quantity, Category category) {
+        this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", category=" + category +
+                '}';
     }
 
     public Long getId() {
@@ -34,37 +47,35 @@ public class Product {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public Integer getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

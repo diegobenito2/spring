@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Categoría</title>
+</head>
+<body>
+<h1>Detalles de la Categoría</h1>
+<p>ID: <span th:text="${category.id}"></span></p>
+<p>Nombre: <span th:text="${category.name}"></span></p>
+<p>Descripción: <span th:text="${category.description}"></span></p>
+<p>Imagen: <img th:src="${category.imageUrl}" width="100" height="100" /></p>
+<p>Estado: <span th:text="${category.active ? 'Activa' : 'Inactiva'}"></span></p>
+<a href="/categories">Volver</a>
+</body>
+</html>

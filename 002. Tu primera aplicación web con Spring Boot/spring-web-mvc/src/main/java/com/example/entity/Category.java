@@ -1,7 +1,6 @@
 package com.example.entity;
 
 import jakarta.persistence.*;
-
 import java.sql.Timestamp;
 import java.util.Set;
 import java.util.Date;

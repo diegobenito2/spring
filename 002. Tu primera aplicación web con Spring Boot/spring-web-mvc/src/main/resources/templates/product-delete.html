@@ -9,8 +9,8 @@
 <body>
 
 <div class="container text-center mt-5">
-    <h2 class="mb-4">Vista de Producto</h2>
-    <form>
+    <h2 class="mb-4">Confirmación borrado</h2>
+    <form th:action="@{'/products/'+${product.id}+'/delete'}" method="POST">
         <input type="hidden" th:field="*{product.id}">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre del Producto</label>
@@ -24,6 +24,7 @@
             <label for="cantidad" class="form-label">Cantidad</label>
             <input type="number" class="form-control" id="cantidad" name="quantity" placeholder="Ingrese la cantidad" th:value="*{product.quantity}" disabled required>
         </div>
+        <button type="submit" class="btn btn-danger">Borrar</button>
         <a class="btn btn-secondary" th:href="@{/products}">Volver</a>
     </form>
 </div>

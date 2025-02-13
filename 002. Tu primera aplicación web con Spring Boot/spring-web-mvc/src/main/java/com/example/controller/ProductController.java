@@ -129,7 +129,6 @@ public class ProductController {
     @PostMapping("/delete/all")
     public String deleteAll(RedirectAttributes redirectAttributes){
         this.repository.deleteAll();
-
         redirectAttributes.addFlashAttribute("message", "Todos los productos han sido eliminados.");
         redirectAttributes.addFlashAttribute("alert", "success");
         return "redirect:/products";

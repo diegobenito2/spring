@@ -27,7 +27,7 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Title</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Actions</th>
@@ -37,7 +37,7 @@
 
                 <tr th:each="product: ${products}">
                     <th scope="row" th:text="${product.id}"></th>
-                    <td th:text="${product.title}"></td>
+                    <td th:text="${product.name}"></td>
                     <td th:text="${product.price}"></td>
                     <td th:text="${product.quantity}"></td>
                     <td>

@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="category : ${categories}">
-                    <td><img th:src="${category.imageUrl}" class="img-thumbnail" width="50" height="50" /></td>
+                    <td><img th:src="${category.imageUrl}" class="img-thumbnail" width="100" height="100"  alt="Categoria imagen"/></td>
                     <td th:text="${category.name}"></td>
                     <td>
                         <span th:if="${category.active}" class="badge bg-success">Activa</span>

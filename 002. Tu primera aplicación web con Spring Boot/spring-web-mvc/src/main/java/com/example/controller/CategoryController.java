@@ -73,7 +73,6 @@ public class CategoryController {
         redirectAttributes.addFlashAttribute("alert", "success");
         return "redirect:/categories";
     }
-
     @GetMapping("/{id}/delete")
     public String deleteCategory(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<Category> category = categoryRepository.findById(id);
@@ -87,7 +86,6 @@ public class CategoryController {
             return "redirect:/categories";
         }
     }
-
     @PostMapping("/{id}/delete")
     public String delete(@ModelAttribute("category") Category category, RedirectAttributes redirectAttributes) {
         this.categoryRepository.delete(category);

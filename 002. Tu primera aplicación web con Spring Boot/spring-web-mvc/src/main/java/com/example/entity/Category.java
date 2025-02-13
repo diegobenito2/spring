@@ -34,13 +34,13 @@ public class Category {
         this.creationDate = new Timestamp(System.currentTimeMillis());
     }
 
-    public Category(String name, String description, String imageUrl, boolean active, Date creationDate, Set<Product> products) {
+    public Category(String name, String description, String imageUrl, boolean active, Date creationDate) {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
         this.active = active;
         this.creationDate = new Timestamp(creationDate.getTime());
-        this.products = products;
+
     }
 
     public Long getId() {

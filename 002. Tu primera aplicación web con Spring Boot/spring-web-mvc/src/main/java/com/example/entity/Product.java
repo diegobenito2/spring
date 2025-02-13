@@ -21,11 +21,10 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, double price, int quantity, Category category) {
+    public Product(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.category = category;
     }
 
     @Override

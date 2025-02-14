@@ -22,12 +22,12 @@ public class Category {
     private String imageUrl;
 
     @Column(nullable = false)
-    private boolean active = true;
+    private boolean active;
 
     @Column(nullable = false)
     private Timestamp creationDate;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category",orphanRemoval = false)
     private Set<Product> products;
 
     public Category() {

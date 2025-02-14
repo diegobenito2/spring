@@ -29,10 +29,8 @@
                    placeholder="Ingrese la URL de la imagen" th:value="*{category.imageUrl}" required>
         </div>
         <div class="mb-3">
-            <label for="state" class="form-label">
-                <input type="checkbox" class="form-check-input" id="state" name="active" th:value="*{category.active}"
-                       checked>
-                 Estado
+            <label for="active" class="form-label">Estado
+                <input type="checkbox" class="form-check-input" id="active" name="active" th:checked="${category.active}">
             </label>
         </div>
 

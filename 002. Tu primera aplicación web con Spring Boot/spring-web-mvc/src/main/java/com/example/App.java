@@ -32,12 +32,12 @@ public class App {
         repositorycat.saveAll(categories);
 
         List<Product> products = List.of(
-                new Product("product1", 5.99, 1),
-                new Product("product2", 6.99, 2),
-                new Product("product3", 7.99, 4),
-                new Product("product4", 8.99, 2),
-                new Product("product5", 8.99, 2),
-                new Product("product6", 8.99, 2)
+                new Product("product1", 5.99, 1,categories.get(0)),
+                new Product("product2", 6.99, 2,categories.get(1)),
+                new Product("product3", 7.99, 4,categories.get(2)),
+                new Product("product4", 8.99, 2,categories.get(3)),
+                new Product("product5", 8.99, 2,categories.get(2)),
+                new Product("product6", 8.99, 2,categories.get(1))
         );
         repositoryproc.saveAll(products);
 

@@ -39,6 +39,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
+                    <th scope="col">Category</th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
@@ -49,6 +50,7 @@
                     <td th:text="${product.name}"></td>
                     <td th:text="${product.price}"></td>
                     <td th:text="${product.quantity}"></td>
+                    <td th:text="${product.category !=null ? product.category.name : 'Sin categoría'}"></td>
                     <td>
                         <a class="btn btn-primary" th:href="@{/products/{id}/view(id=${product.id})}">Ver</a>
                         <a class="btn btn-success" th:href="@{/products/{id}/edit(id=${product.id})}">Editar</a>
